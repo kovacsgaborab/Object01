@@ -24,8 +24,14 @@ namespace Object01
 
     class Teglalap
     {
-        public int a;
-        public int b;
+        private int a;
+        private int b;
+
+        public Teglalap(int aoldal, int boldal)
+        {
+            a = aoldal;
+            b = boldal;
+        }
 
         //public string Terulet()
         //{
@@ -48,7 +54,11 @@ namespace Object01
 
     class Kor
     {
-        public int r;
+        /*public*/private int r; //privát lesz, ha kivesszük előle a publicot, vagy odaírjuk elé a private-ot
+        public Kor(int sugar)
+        {
+            r = sugar;
+        }
 
         public double Kerulet()
         {
@@ -80,21 +90,26 @@ namespace Object01
             //System.Console.WriteLine(Eva.bemutatkozas());
 
             //Console.WriteLine();
-
-            //Teglalap teeglalap = new Teglalap();
+            Console.Write("Adja meg a téglalap A oldalát: ");
+            int aoldal = int.Parse(Console.ReadLine());
+            Console.Write("Adja meg a téglalap B oldalát: ");
+            int boldal = int.Parse(Console.ReadLine());
+            Teglalap teeglalap = new Teglalap(aoldal, boldal);
 
             //teeglalap.a = 3;
             //teeglalap.b = 4;
 
-            //System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
-            //System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
+            System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
+            System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
 
-            Kor korocske = new Kor();
+            //Console.Write("Írja be a kör sugarát: ");
+            //int sugar = int.Parse(Console.ReadLine());
+            //Kor korocske = new Kor(sugar);
 
-            korocske.r = 15;
+            ////korocske.r = 15;
 
-            System.Console.WriteLine("Terület: {0}", korocske.Terulet());
-            System.Console.WriteLine("Kerület: {0}", korocske.Kerulet());
+            //System.Console.WriteLine("Terület: {0}", korocske.Terulet());
+            //System.Console.WriteLine("Kerület: {0}", korocske.Kerulet());
 
             Console.ReadKey();
         }
