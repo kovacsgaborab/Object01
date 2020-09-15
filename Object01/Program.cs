@@ -71,7 +71,7 @@ namespace Object01
         {
             return 2 * r * Math.PI;
         }
-        public double Terulet()
+        private double Terulet()
         {
             return Math.PI * Math.Pow(r, 2);
         }
@@ -126,7 +126,7 @@ namespace Object01
 
             //System.Console.WriteLine("Terület: {0}", korocske.Terulet());
             //System.Console.WriteLine("Kerület: {0}", korocske.Kerulet());
-            System.Console.WriteLine(Kor.adatok());
+            korocske.adatok(); //ide már nem kell WriteLine
 
             Console.ReadKey();
         }
