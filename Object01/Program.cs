@@ -21,26 +21,59 @@ namespace Object01
             return $"{nev} vagyok, {eletkor} éves";
         }
     }
+
+    class Teglalap
+    {
+        public int a;
+        public int b;
+
+        //public string Terulet()
+        //{
+        //    return $"{a*b} a téglalap területe";
+        //}
+        //public string Kerulet()
+        //{
+        //    return $"{2 * (a + b)} a téglalap kerülete";
+        //}
+        public int Terulet()        //ha egész számot kér vissza a feladat
+        {
+            return a * b;
+        }
+        public int Kerulet()
+        {
+            return 2 * (a + b);
+        }
+
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            ember Pisti = new ember();
-            ember Eva = new ember();
+            //ember Pisti = new ember();
+            //ember Eva = new ember();
 
-            Eva.nev = "Nagy Éva";
-            Eva.eletkor = 18;
+            //Eva.nev = "Nagy Éva";
+            //Eva.eletkor = 18;
 
-            Pisti.nev = "Nagy Pisti";
-            Pisti.eletkor = 20;
+            //Pisti.nev = "Nagy Pisti";
+            //Pisti.eletkor = 20;
 
-            Pisti.eletkor++;
+            //Pisti.eletkor++;
 
 
-            System.Console.WriteLine(Pisti.bemutatkozas());
-            System.Console.WriteLine(Eva.bemutatkozas());
+            //System.Console.WriteLine(Pisti.bemutatkozas());
+            //System.Console.WriteLine(Eva.bemutatkozas());
 
-            Console.WriteLine();
+            //Console.WriteLine();
+
+            Teglalap teeglalap = new Teglalap();
+
+            teeglalap.a = 3;
+            teeglalap.b = 4;
+
+            System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
+            System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
+
 
             Console.ReadKey();
         }
