@@ -57,16 +57,30 @@ namespace Object01
         /*public*/private int r; //privát lesz, ha kivesszük előle a publicot, vagy odaírjuk elé a private-ot
         public Kor(int sugar)
         {
-            r = sugar;
+            if (sugar<1)
+            {
+                r = 1;
+            }
+            else
+            {
+                r = sugar;
+            }
         }
 
-        public double Kerulet()
+        private double Kerulet()
         {
             return 2 * r * Math.PI;
         }
         public double Terulet()
         {
             return Math.PI * Math.Pow(r, 2);
+        }
+
+        public void adatok()
+        {
+            Console.WriteLine("Sugár: {0}", r);
+            Console.WriteLine("Terület: {0}", Terulet());
+            Console.WriteLine("Kerület {0}", Kerulet());
         }
     }
 
@@ -89,7 +103,7 @@ namespace Object01
             //System.Console.WriteLine(Pisti.bemutatkozas());
             //System.Console.WriteLine(Eva.bemutatkozas());
 
-            //Console.WriteLine();
+            Console.WriteLine("\nTéglalap");
             Console.Write("Adja meg a téglalap A oldalát: ");
             int aoldal = int.Parse(Console.ReadLine());
             Console.Write("Adja meg a téglalap B oldalát: ");
@@ -102,14 +116,17 @@ namespace Object01
             System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
             System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
 
-            //Console.Write("Írja be a kör sugarát: ");
-            //int sugar = int.Parse(Console.ReadLine());
-            //Kor korocske = new Kor(sugar);
+            Console.WriteLine("\nKör");
+
+            Console.Write("Írja be a kör sugarát: ");
+            int sugar = int.Parse(Console.ReadLine());
+            Kor korocske = new Kor(sugar);
 
             ////korocske.r = 15;
 
             //System.Console.WriteLine("Terület: {0}", korocske.Terulet());
             //System.Console.WriteLine("Kerület: {0}", korocske.Kerulet());
+            System.Console.WriteLine(Kor.adatok());
 
             Console.ReadKey();
         }
