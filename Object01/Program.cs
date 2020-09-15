@@ -45,6 +45,21 @@ namespace Object01
         }
 
     }
+
+    class Kor
+    {
+        public int r;
+
+        public double Kerulet()
+        {
+            return 2 * r * Math.PI;
+        }
+        public double Terulet()
+        {
+            return Math.PI * Math.Pow(r, 2);
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -66,14 +81,20 @@ namespace Object01
 
             //Console.WriteLine();
 
-            Teglalap teeglalap = new Teglalap();
+            //Teglalap teeglalap = new Teglalap();
 
-            teeglalap.a = 3;
-            teeglalap.b = 4;
+            //teeglalap.a = 3;
+            //teeglalap.b = 4;
 
-            System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
-            System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
+            //System.Console.WriteLine("Terület: {0}", teeglalap.Terulet());
+            //System.Console.WriteLine("Kerület: {0}", teeglalap.Kerulet());
 
+            Kor korocske = new Kor();
+
+            korocske.r = 15;
+
+            System.Console.WriteLine("Terület: {0}", korocske.Terulet());
+            System.Console.WriteLine("Kerület: {0}", korocske.Kerulet());
 
             Console.ReadKey();
         }
